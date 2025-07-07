@@ -1,18 +1,17 @@
-import React from 'react';
-
 type Log = {
   time: string;
   message: string;
 };
 
-type Props = {
+type SecurityLogProps = {
+  title: string;
   logs: Log[];
 };
 
-const SecurityLog: React.FC<Props> = ({ logs }) => {
+export default function SecurityLog({ title, logs }: SecurityLogProps) {
   return (
     <div>
-      <h3>Security Logs</h3>
+      <h2>{title}</h2>
       <ul>
         {logs.map((log, index) => (
           <li key={index}>
@@ -22,6 +21,4 @@ const SecurityLog: React.FC<Props> = ({ logs }) => {
       </ul>
     </div>
   );
-};
-
-export default SecurityLog;
+}
