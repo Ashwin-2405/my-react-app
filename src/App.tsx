@@ -1,34 +1,18 @@
-import ActivityFeed from './components/ActivityFeed';
-
-import "./App.css";
-import WelcomeMessage from "./components/WelcomeMessage";
-import SecurityLog from "./components/SecurityLog";
-
-const loginLogs = [
-  { time: "10:00 AM", message: "Login from IP 192.168.1.2" },
-  { time: "10:10 AM", message: "Login from IP 10.0.0.5" },
-];
-
-const alertLogs = [
-  { time: "10:15 AM", message: "Brute-force attack detected" },
-  { time: "10:17 AM", message: "Unauthorized access alert" },
-];
+import React from "react";
+import ActivityFeed from "./components/ActivityFeed";
 
 const activityData = [
-  { timestamp: '10:20 AM', activity: 'User login from IP 10.0.0.1' },
-  { timestamp: '10:25 AM', activity: 'Malware scan completed' },
-  { timestamp: '10:30 AM', activity: 'Threat blocked: Trojan.Agent' },
+  { timestamp: "11:00 PM", activity: "System scan completed" },
+  { timestamp: "11:05 PM", activity: "User logged in from IP 10.0.0.2" },
+  { timestamp: "11:07 PM", activity: "Malware detected in /tmp" }
 ];
-
 
 function App() {
   return (
-    <>
-      <WelcomeMessage username="Ashwin" />
-      <SecurityLog title="Login Logs" logs={loginLogs} />
-      <SecurityLog title="Alerts" logs={alertLogs} />
+    <div className="min-h-screen bg-gray-900 text-white p-6 font-sans">
+      <h1 className="text-3xl font-bold mb-6 text-center">🛡️ CyberGuard Dashboard</h1>
       <ActivityFeed activities={activityData} />
-    </>
+    </div>
   );
 }
 
